@@ -25,7 +25,7 @@
                     <li><a href="#start_using_gift_cards">The Tango Card and other Retailer Brand Gift Cards</a></li>
                 </ul>
             </li>
-            <li><a href="#api_support">API Support</a></li>
+            <li><a href="#sdk_support">Tango Card API Support</a></li>
             <li><a href="#contact_us">Contact Us</a></li>
         </ul>
     </li>
@@ -78,7 +78,7 @@ Tango Card's API is flexible, secure, and straightforward. It allows any server 
 
 <a name="tango_card_sdks"></a>
 ### Tango Card SDKs ###
-For those developers that do not wish to develop directly with our Tango Card API, there are several Tango Card SDKs currently available that use the Tango Card API:
+For those developers who do not wish to develop directly with our Tango Card API, there are several Tango Card SDKs currently available that use the Tango Card API:
 <ul>
     <li><a href="https://github.com/tangocarddev/TangoCard_DotNet_SDK" target="_blank">Tango Card C#/.Net 4.0 SDK</a></li>
     <li><a href="https://github.com/tangocarddev/TangoCard_PHP_SDK" target="_blank">Tango Card PHP SDK</a></li>
