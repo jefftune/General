@@ -1,5 +1,5 @@
-<h1>Tango Card API</h1>
-<h3>Purchasing the Tango Card through Tango Card API endpoint</h3>
+<h1>Tango Card Service API</h1>
+<h3>Purchasing the Tango Card through Tango Card Service API endpoints</h3>
 ===
 
 # Table of Contents #
@@ -73,8 +73,8 @@
 # Introduction #
 
 <a name="tango_card_api"></a>
-## Tango Card API ##
-Tango Card's API is flexible, secure, and straightforward. It allows any server to purchase the Tango Card and is intended for users requiring high volume transactions and processes.
+## Tango Card Service API ##
+Tango Card Service API is flexible, secure, and straightforward. It allows any server to purchase the Tango Card and is intended for users requiring high volume transactions and processes.
 
 <a name="tango_card_sdks"></a>
 ### Tango Card SDKs ###
@@ -87,7 +87,7 @@ For those developers who do not wish to develop directly with our Tango Card API
 
 <a name="incorporate_tango_card"></a>
 ## Incorporate the Tango Card ##
-Tango Card API allows you to incorporate the innovative the Tango Card into your reward, loyalty, and engagement applications. 
+The Tango Card Service API allows you to incorporate the innovative Tango Card directly into your reward, loyalty, and engagement applications.
 
 Tango Card is the “exactly what you want” gift card and allows the recipient to use their value exactly how they want – they can select a premier gift card, they can divide their value among Brands, they can use some today and save the rest for another day. They can also donate to a non-profit organization. 
 
@@ -140,7 +140,7 @@ The API is optimized for ordering the Tango Card, which has SKU of ```"tango-car
 If you have questions about potentially incorporating other brands or digital goods in your program please contact us at general@tangocard.com.
 
 <a name="sdk_support"></a>
-## Tnngo Card API Support ##
+## Tango Card API Support ##
 If you have any questions with the Tango Card API, please contact us at sdk@tangocard.com.
 
 <a name="contact_us"></a>
@@ -148,12 +148,12 @@ If you have any questions with the Tango Card API, please contact us at sdk@tang
 To learn more about Tango Card integration solutions, call 1.877.55.TANGO.
 
 <a name="tango_card_api_overview"></a>
-# Tango Card API Overview #
+# Tango Card Service API Overview #
 
 <a name="tango_card_api_requests"></a>
-## Tango Card API Requests ##
+## Tango Card Service API Requests ##
 
-The Tango Card SDK, every Request has a corresponding success-case Response object.
+With the Tango Card API, every request has a corresponding success-case response object. There are also several failure-case response objects which are shared between calls. The specifics of the request and response objects will be described in <a href="#tango_card_api_methods">Tango Card API Methods</a>.
 
 <a name="http_post_request_body"></a>
 ### HTTP POST Request Body ###
@@ -246,9 +246,11 @@ Available are two endpoints that provide the Tango Card Service API:
 <a name="tango_card_service_api_security"></a>
 ## Tango Card Service API Security ##
 
-Requests are secure HTTP POST using SSL.
+Tango Card Service API Requests are performed using secure HTTP POST via <a href="http://en.wikipedia.org/wiki/Transport_Layer_Security" target="_blank">"TLS/SSL"</a>.
 
-All calls are made via <a href="http://technet.microsoft.com/en-us/library/cc784450(v=ws.10).aspx">"TLS/SSL"</a>.
+The use of SSL allows for securely transmitting data and prevents <a href="http://en.wikipedia.org/wiki/Man-in-the-middle_attack" target="_blank">man-in-the-middle attacks</a>.
+
+The lack of sessions and the inability to communicate with the API over HTTP prevents <a href="http://en.wikipedia.org/wiki/Session_hijacking" target="_blank">session hijacking</a> and <a href="http://en.wikipedia.org/wiki/Cross-site_request_forgery" target="_blank">cross-site request forgery</a>.
 
 <a name="tango_card_api_methods"></a>
 # Tango Card API Methods #
@@ -312,7 +314,7 @@ All calls are made via <a href="http://technet.microsoft.com/en-us/library/cc784
     <dt>cardSku</dt>
     <dd>string - The SKU of the card to purchase. The SKU for the Tango Card is "tango-card". For other SKUs, please refer to this section: <a href="#start_using_gift_cards">The Tango Card and other Retailer Brand Gift Cards</a></dd>
     <dt>cardValue</dt>
-    <dd>integer - The value of the card to purchase.</dd>
+    <dd>integer - The value of the card to purchase in cents (100 = $1.00).</dd>
     <dt>tcSend</dt>
     <dd>boolean - Whether Tango Card will send the email to the user.</dd>
     <dt>recipientName</dt>
@@ -363,7 +365,7 @@ All calls are made via <a href="http://technet.microsoft.com/en-us/library/cc784
 <a name="failure_response_types" ></a>
 # Failure Response Types #
 
-Here are the following expect failure response types that can be returned from Tango Card API endpoint.
+Here are the following expected failure response types that can be returned from Tango Card API endpoint.
 
 <a name="failure_response_sys_error" ></a>
 ## SYS_ERROR ##
