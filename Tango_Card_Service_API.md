@@ -452,7 +452,7 @@ Content-Type: application/json
 Here are the following expected failure response types that can be returned from Tango Card API endpoint.
 
 <a name="failure_response_sys_error" ></a>
-## SYS_ERROR ##
+### `SYS_ERROR` ###
 
 An error happened on our end. The call may may be re-tried, however if the error persists please contact us.
 
@@ -462,7 +462,7 @@ An error happened on our end. The call may may be re-tried, however if the error
 </dl>
     
 <a name="failure_response_inv_input" ></a>
-## INV_INPUT ##
+### `INV_INPUT` ###
 
 One (or more) of the supplied inputs didn’t meet the requirements. The request should be altered before resubmitting.
 
@@ -470,9 +470,33 @@ One (or more) of the supplied inputs didn’t meet the requirements. The request s
     <dt>invalid<dt>
     <dd>JSON object - The object’s properties are the name of the invalid field, the value of the property is description of the associated problem.</dd>
 </dl>
+
+#### Example `INV_INPUT` Response Type ####
+
+```http
+HTTP/1.1 200 OK
+Date: Fri, 21 Sep 2012 05:07:19 GMT
+Server: Apache/2.2.22 (Ubuntu)
+X-Powered-By: PHP/5.3.10-1ubuntu3.3
+Access-Control-Allow-Origin: *
+Content-Length: 98
+Connection: close
+Content-Type: application/json
+
+{
+    "responseType":"INV_INPUT",
+    "response":
+        {
+            "invalid":
+            {
+                "cardSku":"SKU does not appear to be valid."
+            }
+        }
+}
+```
     
 <a name="failure_response_inv_credential" ></a>
-## INV_CREDENTIAL ##
+### `INV_CREDENTIAL` ###
 
 The credential was either missing, or something was wrong with it. The request should be altered before resubmitting.
 
@@ -480,9 +504,34 @@ The credential was either missing, or something was wrong with it. The request s
     <dt>message<dt>
     <dd>string - A description of what appeared to be wrong with the supplied credential.</dd>
 </dl>
+
+#### Example `INV_CREDENTIAL` Response Type ####
+
+<dl>
+    <dt><code>TCP:PNPA:3</code></dt>
+    <dd>Provided user credentials are not valid.</dd>
+</dl>
+
+```http
+HTTP/1.1 200 OK
+Date: Fri, 21 Sep 2012 05:07:17 GMT
+Server: Apache/2.2.22 (Ubuntu)
+X-Powered-By: PHP/5.3.10-1ubuntu3.3
+Access-Control-Allow-Origin: *
+Content-Length: 69
+Connection: close
+Content-Type: application/json
+
+{   "responseType":"INV_CREDENTIAL",
+    "response":
+        {
+            "message":"TCP:PNPA:3"
+        }
+}
+```
     
 <a name="failure_response_ins_inv" ></a>
-## INS_INV ##
+### `INS_INV` ###
 
 We don’t have enough available inventory to fulfill the request. The request should be altered before resubmitting.
 
@@ -494,7 +543,7 @@ We don’t have enough available inventory to fulfill the request. The request sho
 </dl>
     
 <a name="failure_response_ins_funds" ></a>
-## INS_FUNDS ##
+### `INS_FUNDS` ###
 
 The account associated with the authenticated user doesn’t have enough available balance to cover the cost of the purchase.
 
@@ -504,6 +553,26 @@ The account associated with the authenticated user doesn’t have enough available
     <dt>orderCost<dt>
     <dd>integer - The amount the order would cost to complete in cents (100 = $1.00).</dd>
 </dl>
-    
-  
+
+#### Example `INS_FUNDS` Response Type ####
+
+```http
+HTTP/1.1 200 OK
+Date: Fri, 21 Sep 2012 05:07:18 GMT
+Server: Apache/2.2.22 (Ubuntu)
+X-Powered-By: PHP/5.3.10-1ubuntu3.3
+Access-Control-Allow-Origin: *
+Content-Length: 78
+Connection: close
+Content-Type: application/json
+
+{
+    "responseType":"INS_FUNDS",
+    "response":
+        {
+            "availableBalance":0,
+            "orderCost":100
+        }
+}
+```
 
