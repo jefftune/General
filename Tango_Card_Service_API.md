@@ -272,7 +272,7 @@ The lack of sessions and the inability to communicate with the API over HTTP pre
     <dd>https://www.tangocard.com user account's password</dd>
 </dl>
 
-### Example `HTTP POST` Request ###
+#### Example `HTTP POST` Request ####
 
 ```http
 POST https://int.tangocard.com/Version2/GetAvailableBalance HTTP/1.1
@@ -313,7 +313,7 @@ Connection: Keep-Alive
     </dd>
 </dl>
 
-### Example `SUCCESS` Response Type ###
+#### Example `SUCCESS` Response Type ####
 
 ```http
 HTTP/1.1 200 OK
@@ -365,7 +365,7 @@ Content-Type: application/json
     <dd>string (length 1 - 255, required if tcSend=true) - The name of the person sending the card.</dd>
 </dl>
 
-### Example `HTTP POST` Request ###
+#### Example `HTTP POST` Request ####
 
 ```http
 POST https://int.tangocard.com/Version2/PurchaseCard HTTP/1.1
@@ -406,6 +406,21 @@ Expect: 100-continue
                     <dt>cardPin</dt>
                     <dd>string - The card’s "pin", may be null.</dd>
                 </dl>
+            </dd>
+        </dl>
+    </dd>
+    <dt>Failure Response Types:</dt>
+    <dd>See details for each within next section.
+        <dl>
+            <dt><code>INV_CREDENTIAL</code></dt>
+            <dt><code>INV_INPUT</code></dt>
+            <dt><code>INS_INV</code></dt>
+            <dt><code>INS_FUNDS</code></dt>
+            <dt><code>SYS_ERROR</code></dt>
+        </dl>
+    </dd>
+</dl>
+
 
 ### Example `SUCCESS` Response Type ###
 
@@ -430,21 +445,6 @@ Content-Type: application/json
         }
 }
 ```
-            </dd>
-        </dl>
-    </dd>
-    <dt>Failure Response Types:</dt>
-    <dd>See details for each within next section.
-        <dl>
-            <dt><code>INV_CREDENTIAL</code></dt>
-            <dt><code>INV_INPUT</code></dt>
-            <dt><code>INS_INV</code></dt>
-            <dt><code>INS_FUNDS</code></dt>
-            <dt><code>SYS_ERROR</code></dt>
-        </dl>
-    </dd>
-</dl>
-
 
 <a name="failure_response_types" ></a>
 # Failure Response Types #
