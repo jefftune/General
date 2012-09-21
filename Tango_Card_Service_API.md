@@ -1,5 +1,5 @@
 <h1>Tango Card Service API</h1>
-<h3>Purchasing the Tango Card through Tango Card Service API endpoints</h3>
+<h3>Incorporate the innovative Tango Card directly into your reward, loyalty, and engagement applications.</h3>
 ===
 
 # Table of Contents #
@@ -83,6 +83,7 @@ For those developers who do not wish to develop directly with our Tango Card API
     <li><a href="https://github.com/tangocarddev/TangoCard_DotNet_SDK" target="_blank">Tango Card C#/.Net 4.0 SDK</a></li>
     <li><a href="https://github.com/tangocarddev/TangoCard_PHP_SDK" target="_blank">Tango Card PHP SDK</a></li>
     <li><a href="https://github.com/tangocarddev/TangoCard_Java_SDK" target="_blank">Tango Card Java SDK</a></li>
+    <li><a href="https://github.com/tangocarddev/TangoCard_Ruby_SDK" target="_blank">Tango Card Ruby SDK</a></li>
 </ul>
 
 <a name="incorporate_tango_card"></a>
