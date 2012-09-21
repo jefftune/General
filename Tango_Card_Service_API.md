@@ -272,29 +272,55 @@ The lack of sessions and the inability to communicate with the API over HTTP pre
     <dd>https://www.tangocard.com user account's password</dd>
 </dl>
 
+```json
+
+    POST https://int.tangocard.com/Version2/GetAvailableBalance HTTP/1.1
+    Content-Type: application/json
+    Host: int.tangocard.com
+    Content-Length: 69
+    Expect: 100-continue
+    Connection: Keep-Alive
+
+    {"username":"third_party_int@tangocard.com","password":"integrateme"}
+
+```
+
 <a name="getavailablebalance_response_types"></a>
 ### Response Types ###
 
 <dt>Success Response Type:</dt>
-<dd>
-    <dl>
-        <dt>SUCCESS</dt>
-        <dd>JSON Object:
-            <dl>
-                <dt>availableBalance</dt>
-                <dd>integer - The balance available to the user in cents (100 = $1.00).</dd>
-            </dl>
-        </dd>
-    </dl>
-</dd>
-<dt>Failure Response Types:</dt>
-<dd>See details for each within next section.
-    <dl>
-        <dt>SYS_ERROR</dt>
-        <dt>INV_CREDENTIAL</dt>
-    </dl>
-</dd>
+    <dd>
+        <dl>
+            <dt>SUCCESS</dt>
+            <dd>JSON Object:
+                <dl>
+                    <dt>availableBalance</dt>
+                    <dd>integer - The balance available to the user in cents (100 = $1.00).</dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+    <dt>Failure Response Types:</dt>
+    <dd>See details for each within next section.
+        <dl>
+            <dt>SYS_ERROR</dt>
+            <dt>INV_CREDENTIAL</dt>
+        </dl>
+    </dd>
 </dl>
+
+```json
+    HTTP/1.1 200 OK
+    Date: Fri, 21 Sep 2012 04:42:56 GMT
+    Server: Apache/2.2.22 (Ubuntu)
+    X-Powered-By: PHP/5.3.10-1ubuntu3.3
+    Access-Control-Allow-Origin: *
+    Content-Length: 68
+    Connection: close
+    Content-Type: application/json
+
+    {"responseType":"SUCCESS","response":{"availableBalance":873486842}}
+```
 
 <a name="request_purchasecard"></a>
 ## PurchaseCard ##
