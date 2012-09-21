@@ -460,6 +460,27 @@ An error happened on our end. The call may may be re-tried, however if the error
     <dt>errorCode<dt>
     <dd>string - An internal error code that we can use to track down where the error occurred.</dd>
 </dl>
+
+#### Example `SYS_ERROR` Response Type ####
+
+```http
+HTTP/1.1 200 OK
+Date: Fri, 21 Sep 2012 05:34:08 GMT
+Server: Apache/2.2.22 (Ubuntu)
+X-Powered-By: PHP/5.3.10-1ubuntu3.3
+Access-Control-Allow-Origin: *
+Content-Length: 65
+Connection: close
+Content-Type: application/json
+
+{
+    "responseType":"SYS_ERROR",
+    "response":
+        {
+            "errorCode":"TPC:PC:35"
+        }
+}
+```
     
 <a name="failure_response_inv_input" ></a>
 ### `INV_INPUT` ###
