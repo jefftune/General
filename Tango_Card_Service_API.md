@@ -309,8 +309,8 @@ Connection: Keep-Alive
     <dt>Failure Response Types:</dt>
     <dd>See details for each within next section.
         <dl>
-            <dt><code>INV_CREDENTIAL</code></dt>
-            <dt><code>SYS_ERROR</code></dt>
+            <dt><a name="failure_response_inv_credential" ><code>INV_CREDENTIAL</code></a></dt>
+            <dt><a name="failure_response_sys_error" ><code>SYS_ERROR</code></a></dt>
         </dl>
     </dd>
 </dl>
@@ -414,11 +414,11 @@ Expect: 100-continue
     <dt>Failure Response Types:</dt>
     <dd>See details for each within next section.
         <dl>
-            <dt><code>INV_CREDENTIAL</code></dt>
-            <dt><code>INV_INPUT</code></dt>
-            <dt><code>INS_INV</code></dt>
-            <dt><code>INS_FUNDS</code></dt>
-            <dt><code>SYS_ERROR</code></dt>
+            <dt><a name="failure_response_inv_credential" ><code>INV_CREDENTIAL</code></a></dt>
+            <dt><a name="failure_response_inv_input" ><code>INV_INPUT</code></a></dt>
+            <dt><a name="failure_response_ins_inv" ><code>INS_INV</code></a></dt>
+            <dt><a name="failure_response_ins_funds" ><code>INS_FUNDS</code></a></dt>
+            <dt><a name="failure_response_sys_error" ><code>SYS_ERROR</code></a></dt>
         </dl>
     </dd>
 </dl>
