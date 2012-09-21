@@ -7,7 +7,7 @@
 <ul>
     <li><a href="#introduction">Introduction</a>
         <ul>
-            <li><a href="#tango_card_api">Tango Card API</a>
+            <li><a href="#tango_card_api">Tango Card Service API</a>
                 <ul>
                     <li><a href="#tango_card_sdks">Tango Card SDKs</a></li>
                 </ul>
@@ -26,7 +26,7 @@
                     <li><a href="#start_using_gift_cards">The Tango Card and other Retailer Brand Gift Cards</a></li>
                 </ul>
             </li>
-            <li><a href="#sdk_support">Tango Card API Support</a></li>
+            <li><a href="#sdk_support">Tango Card Service API Support</a></li>
             <li><a href="#contact_us">Contact Us</a></li>
         </ul>
     </li>
@@ -68,6 +68,8 @@
             <li><a name="failure_response_ins_funds" >INS_FUNDS</a></li>
         </ul>
     </li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#production_deployment">Production Deployment</a></li>
 </ul>
 
 <a name="introduction"></a>
@@ -107,7 +109,7 @@ In order to use the Tango Card API, it is required to open and fund a Tango Card
 
 First, register to open a Tango Card account: <a href="https://www.tangocard.com/user/register" target="_blank">Register</a> 
 
-The provided 'username (email address)' and 'password' will be the same as what will be used for authenticating usage of the Tango Card API's methods.
+The provided 'username (email address)' and 'password' will be the same as what will be used for authenticating usage of the Tango Card Service API's methods.
 
 <a name="open_account_login"></a>
 ### Login ###
@@ -117,18 +119,18 @@ Second, to verify availability of your production account by using login: <a hre
 <a name="open_account_add_funds"></a>
 ### Add Funds ###
 
-Third, in order to purchase the Tango Card through the Tango Card API, there must be funds within your Tango Card account.
+Third, in order to purchase the Tango Card through the Tango Card Service API, there must be funds within your Tango Card account.
 
 Fund your account here either by 'wire transfer', 'check', or 'credit card': <a href="https://www.tangocard.com/user/addfunds" target="_blank">Add Funds</a>
 
 <a name="start_using"></a>
 ## Start Using ##
 
-After opening and funding your Tango Card account, then you are ready to begin using the Tango Card API to access your account.
+After opening and funding your Tango Card account, then you are ready to begin using the Tango Card Service API to access your account.
 
 <a name="start_using_purchase"></a>
 ### Purchase and Distribution of Gift Cards ###
-Through the Tango Card API you can purchase Tango Card gift cards with your choice of delivery:
+Through the Tango Card Service API you can purchase Tango Card gift cards with your choice of delivery:
 <ul>
     <li>Have Tango Card service send gift cards directly to recipients via email which will include live gift card codes.</li>
     <li>You take the returned live gift card codes for you to customize and redistribute.</li>
@@ -142,8 +144,8 @@ The API is optimized for ordering the Tango Card, which has SKU of ```"tango-car
 If you have questions about potentially incorporating other brands or digital goods in your program please contact us at general@tangocard.com.
 
 <a name="sdk_support"></a>
-## Tango Card API Support ##
-If you have any questions with the Tango Card API, please contact us at sdk@tangocard.com.
+## Tango Card Service API Support ##
+If you have any questions with the Tango Card Service API, please contact us at sdk@tangocard.com.
 
 <a name="contact_us"></a>
 ## Contact Us ##
@@ -155,7 +157,7 @@ To learn more about Tango Card integration solutions, call 1.877.55.TANGO.
 <a name="tango_card_api_requests"></a>
 ## Tango Card Service API Requests ##
 
-With the Tango Card API, every request has a corresponding success-case response object. There are also several failure-case response objects which are shared between calls. The specifics of the request and response objects will be described in <a href="#tango_card_api_methods">Tango Card API Methods</a>.
+With the Tango Card Service API, every request has a corresponding success-case response object. There are also several failure-case response objects which are shared between calls. The specifics of the request and response objects will be described in <a href="#tango_card_api_methods">Tango Card API Methods</a>.
 
 <a name="http_post_request_body"></a>
 ### HTTP POST Request Body ###
@@ -545,7 +547,8 @@ Content-Length: 69
 Connection: close
 Content-Type: application/json
 
-{   "responseType":"INV_CREDENTIAL",
+{
+    "responseType":"INV_CREDENTIAL",
     "response":
         {
             "message":"TCP:PNPA:3"
@@ -599,3 +602,12 @@ Content-Type: application/json
 }
 ```
 
+<a name="license"></a>
+# License #
+
+The Tango Card Service API is free to use, given some restrictions. Please see the LICENSE file for details.
+
+<a name="production_deployment"></a>
+# Production Deployment #
+
+When you're ready to go live, email [sales@tangocard.com](mailto:sales@tangocard.com). We'll get you set up with a contract and everything else you need, including linking your account so that transactions served via your integration will draw down on your Tango Card account. 
