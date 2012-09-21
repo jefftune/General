@@ -272,52 +272,52 @@ The lack of sessions and the inability to communicate with the API over HTTP pre
     <dd>https://www.tangocard.com user account's password</dd>
 </dl>
 
-```json
-    POST https://int.tangocard.com/Version2/GetAvailableBalance HTTP/1.1
-    Content-Type: application/json
-    Host: int.tangocard.com
-    Content-Length: 69
-    Expect: 100-continue
-    Connection: Keep-Alive
+```http
+POST https://int.tangocard.com/Version2/GetAvailableBalance HTTP/1.1
+Content-Type: application/json
+Host: int.tangocard.com
+Content-Length: 69
+Expect: 100-continue
+Connection: Keep-Alive
 
-    {"username":"third_party_int@tangocard.com","password":"integrateme"}
+{"username":"third_party_int@tangocard.com","password":"integrateme"}
 ```
 
 <a name="getavailablebalance_response_types"></a>
 ### Response Types ###
 
 <dt>Success Response Type:</dt>
-    <dd>
-        <dl>
-            <dt>SUCCESS</dt>
-            <dd>JSON Object:
-                <dl>
-                    <dt>availableBalance</dt>
-                    <dd>integer - The balance available to the user in cents (100 = $1.00).
-```json
-    HTTP/1.1 200 OK
-    Date: Fri, 21 Sep 2012 04:42:56 GMT
-    Server: Apache/2.2.22 (Ubuntu)
-    X-Powered-By: PHP/5.3.10-1ubuntu3.3
-    Access-Control-Allow-Origin: *
-    Content-Length: 68
-    Connection: close
-    Content-Type: application/json
+<dd>
+    <dl>
+        <dt>SUCCESS</dt>
+        <dd>JSON Object:
+            <dl>
+                <dt>availableBalance</dt>
+                <dd>integer - The balance available to the user in cents (100 = $1.00).
+```http
+HTTP/1.1 200 OK
+Date: Fri, 21 Sep 2012 04:42:56 GMT
+Server: Apache/2.2.22 (Ubuntu)
+X-Powered-By: PHP/5.3.10-1ubuntu3.3
+Access-Control-Allow-Origin: *
+Content-Length: 68
+Connection: close
+Content-Type: application/json
 
-    {"responseType":"SUCCESS","response":{"availableBalance":873486842}}
+{"responseType":"SUCCESS","response":{"availableBalance":873486842}}
 ```
-                    </dd>
-                </dl>
-            </dd>
-        </dl>
-    </dd>
-    <dt>Failure Response Types:</dt>
-    <dd>See details for each within next section.
-        <dl>
-            <dt><code>INV_CREDENTIAL</code></dt>
-            <dt><code>SYS_ERROR</code></dt>
-        </dl>
-    </dd>
+                </dd>
+            </dl>
+        </dd>
+    </dl>
+</dd>
+<dt>Failure Response Types:</dt>
+<dd>See details for each within next section.
+    <dl>
+        <dt><code>INV_CREDENTIAL</code></dt>
+        <dt><code>SYS_ERROR</code></dt>
+    </dl>
+</dd>
 </dl>
 
 
@@ -384,16 +384,16 @@ The lack of sessions and the inability to communicate with the API over HTTP pre
                 </dl>
                 
 ```http
-    HTTP/1.1 200 OK
-    Date: Fri, 21 Sep 2012 04:42:57 GMT
-    Server: Apache/2.2.22 (Ubuntu)
-    X-Powered-By: PHP/5.3.10-1ubuntu3.3
-    Access-Control-Allow-Origin: *
-    Content-Length: 172
-    Connection: close
-    Content-Type: application/json
+HTTP/1.1 200 OK
+Date: Fri, 21 Sep 2012 04:42:57 GMT
+Server: Apache/2.2.22 (Ubuntu)
+X-Powered-By: PHP/5.3.10-1ubuntu3.3
+Access-Control-Allow-Origin: *
+Content-Length: 172
+Connection: close
+Content-Type: application/json
 
-    {"responseType":"SUCCESS","response":{"referenceOrderId":"112-09213864-21","cardToken":"505bf051296370.96220841","cardNumber":"7001-7040-0119-6557-815","cardPin":"157228"}}
+{"responseType":"SUCCESS","response":{"referenceOrderId":"112-09213864-21","cardToken":"505bf051296370.96220841","cardNumber":"7001-7040-0119-6557-815","cardPin":"157228"}}
 ```
             </dd>
         </dl>
