@@ -273,7 +273,6 @@ The lack of sessions and the inability to communicate with the API over HTTP pre
 </dl>
 
 ```json
-
     POST https://int.tangocard.com/Version2/GetAvailableBalance HTTP/1.1
     Content-Type: application/json
     Host: int.tangocard.com
@@ -282,7 +281,6 @@ The lack of sessions and the inability to communicate with the API over HTTP pre
     Connection: Keep-Alive
 
     {"username":"third_party_int@tangocard.com","password":"integrateme"}
-
 ```
 
 <a name="getavailablebalance_response_types"></a>
@@ -295,20 +293,7 @@ The lack of sessions and the inability to communicate with the API over HTTP pre
             <dd>JSON Object:
                 <dl>
                     <dt>availableBalance</dt>
-                    <dd>integer - The balance available to the user in cents (100 = $1.00).</dd>
-                </dl>
-            </dd>
-        </dl>
-    </dd>
-    <dt>Failure Response Types:</dt>
-    <dd>See details for each within next section.
-        <dl>
-            <dt>SYS_ERROR</dt>
-            <dt>INV_CREDENTIAL</dt>
-        </dl>
-    </dd>
-</dl>
-
+                    <dd>integer - The balance available to the user in cents (100 = $1.00).
 ```json
     HTTP/1.1 200 OK
     Date: Fri, 21 Sep 2012 04:42:56 GMT
@@ -321,6 +306,21 @@ The lack of sessions and the inability to communicate with the API over HTTP pre
 
     {"responseType":"SUCCESS","response":{"availableBalance":873486842}}
 ```
+                    </dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+    <dt>Failure Response Types:</dt>
+    <dd>See details for each within next section.
+        <dl>
+            <dt><code>INV_CREDENTIAL</code></dt>
+            <dt><code>SYS_ERROR</code></dt>
+        </dl>
+    </dd>
+</dl>
+
+
 
 <a name="request_purchasecard"></a>
 ## PurchaseCard ##
@@ -353,38 +353,61 @@ The lack of sessions and the inability to communicate with the API over HTTP pre
     <dd>string (length 1 - 255, required if tcSend=true) - The name of the person sending the card.</dd>
 </dl>
 
+```http
+    POST https://int.tangocard.com/Version2/PurchaseCard HTTP/1.1
+    Content-Type: application/json
+    Host: int.tangocard.com
+    Content-Length: 201
+    Expect: 100-continue
+
+    {"cardSku":"tango-card","cardValue":100,"tcSend":false,"recipientName":null,"recipientEmail":null,"giftMessage":null,"giftFrom":null,"username":"third_party_int@tangocard.com","password":"integrateme"}
+```
+
 <a name="purchasecard_response_types"></a>
 ### Response Types ###
 
 <dl>
-<dt>Success Response Type:</dt>
-<dd>
-    <dl>
-        <dt>SUCCESS</dt>
-        <dd>JSON Object:
-            <dl>
-                <dt>referenceOrderId</dt>
-                <dd>string - A unique token that we can use to look up the order.</dd>
-                <dt>cardToken</dt>
-                <dd>string - A unique token that we can use to look up the card.</dd>
-                <dt>cardNumber</dt>
-                <dd>string - The card’s "number".</dd>
-                <dt>cardPin</dt>
-                <dd>string - The card’s "pin", may be null.</dd>
-            </dl>
-        </dd>
-    </dl>
-</dd>
-<dt>Failure Response Types:</dt>
-<dd>See details for each within next section.
-    <dl>
-        <dt>SYS_ERROR</dt>
-        <dt>INV_CREDENTIAL</dt>
-        <dt>INV_INPUT</dt>
-        <dt>INS_INV</dt>
-        <dt>INS_FUNDS</dt>
-    </dl>
-</dd>
+    <dt>Success Response Type:</dt>
+    <dd>
+        <dl>
+            <dt>SUCCESS</dt>
+            <dd>JSON Object:
+                <dl>
+                    <dt>referenceOrderId</dt>
+                    <dd>string - A unique token that we can use to look up the order.</dd>
+                    <dt>cardToken</dt>
+                    <dd>string - A unique token that we can use to look up the card.</dd>
+                    <dt>cardNumber</dt>
+                    <dd>string - The card’s "number".</dd>
+                    <dt>cardPin</dt>
+                    <dd>string - The card’s "pin", may be null.</dd>
+                </dl>
+                
+```http
+    HTTP/1.1 200 OK
+    Date: Fri, 21 Sep 2012 04:42:57 GMT
+    Server: Apache/2.2.22 (Ubuntu)
+    X-Powered-By: PHP/5.3.10-1ubuntu3.3
+    Access-Control-Allow-Origin: *
+    Content-Length: 172
+    Connection: close
+    Content-Type: application/json
+
+    {"responseType":"SUCCESS","response":{"referenceOrderId":"112-09213864-21","cardToken":"505bf051296370.96220841","cardNumber":"7001-7040-0119-6557-815","cardPin":"157228"}}
+```
+            </dd>
+        </dl>
+    </dd>
+    <dt>Failure Response Types:</dt>
+    <dd>See details for each within next section.
+        <dl>
+            <dt><code>INV_CREDENTIAL</code></dt>
+            <dt><code>INV_INPUT</code></dt>
+            <dt><code>INS_INV</code></dt>
+            <dt><code>INS_FUNDS</code></dt>
+            <dt><code>SYS_ERROR</code></dt>
+        </dl>
+    </dd>
 </dl>
 
 
