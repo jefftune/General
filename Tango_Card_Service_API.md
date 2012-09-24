@@ -161,17 +161,14 @@ With the Tango Card Service API, every request has a corresponding success-case 
 
 <a name="http_post_request_body"></a>
 ### HTTP POST Request Body ###
+
 All requests are via JSON-encoded objects as the payload of a HTTP POST call on a specified method. As an example, if the input listed below was "sku" then the POST body might look like:
 
 ```json
 {"sku":"tango-card"}
 ```
 
-Note, however that since this is an HTTP POST that this should be <a href="http://en.wikipedia.org/wiki/Percent-encoding">"percent-encoded"</a>, as normal, so the actual body might actually look more like:
-
-```text
-%7B%22sku%22%3A%22tango-card%22%7D
-```
+Thereby, HTTP POST's `"Content-Type"` is expected to be <a href="http://tools.ietf.org/html/rfc4627" target="_blank">`application\json`</a>.
 
 <a name="request_methods"></a>
 ### Request Methods ###
