@@ -168,7 +168,9 @@ All requests are via JSON-encoded objects as the payload of a HTTP POST call on 
 {"sku":"tango-card"}
 ```
 
-Thereby, HTTP POST's `"Content-Type"` is expected to be <a href="http://tools.ietf.org/html/rfc4627" target="_blank">`application\json`</a>.
+Thereby, HTTP POST's `"Content-Type"` is expected to be <a href="http://tools.ietf.org/html/rfc4627" target="_blank">`application/json; charset=utf-8`</a>.
+
+`Content-type: application/json; charset=utf-8` designates the content to be in JSON format, encoded in the UTF-8 character encoding. Designating the encoding is somewhat redundant for JSON, since the default encoding for JSON is UTF-8. So in this case the receiving server apparently is happy knowing that it's dealing with JSON and assumes that the encoding is UTF-8 by default, that's why it works with or without the header.
 
 <a name="request_methods"></a>
 ### Request Methods ###
