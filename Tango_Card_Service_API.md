@@ -26,8 +26,12 @@
                     <li><a href="#start_using_gift_cards">The Tango Card and other Retailer Brand Gift Cards</a></li>
                 </ul>
             </li>
-            <li><a href="#sdk_support">Tango Card Service API Support</a></li>
-            <li><a href="#contact_us">Contact Us</a></li>
+        </ul>
+    </li>
+    <li><a href="#sdk_support">Tango Card Service API Support</a>
+        <ul>
+            <li><a href="#sdk_support_contact">Contact Us</a></li>
+            <li><a href="#sdk_support_resolve">Resolving Issues using Fiddler 2</a></li>
         </ul>
     </li>
     <li><a href="#tango_card_api_overview">Tango Card API Overview</a>
@@ -102,7 +106,7 @@ Tango Card solutions are already used by Microsoft Bing, FedEx, Extole, Plink, b
 <a name="open_account"></a>
 ## Open Tango Card Account ##
 
-In order to use the Tango Card API, it is required to open and fund a Tango Card account on https://www.tangocard.com
+In order to use the Tango Card Service API, it is required to open and fund a Tango Card account on https://www.tangocard.com
 
 <a name="open_account_register"></a>
 ### Register ###
@@ -139,17 +143,56 @@ Through the Tango Card Service API you can purchase Tango Card gift cards with y
 <a name="start_using_gift_cards"></a>
 ### The Tango Card and other Retailer Brand Gift Cards ###
 
-The API is optimized for ordering the Tango Card, which has SKU of ```"tango-card"```.
+The API is optimized for ordering the Tango Card, which has SKU of `tango-card`.
 
 If you have questions about potentially incorporating other brands or digital goods in your program please contact us at general@tangocard.com.
 
 <a name="sdk_support"></a>
-## Tango Card Service API Support ##
+# Tango Card Service API Support #
 If you have any questions with the Tango Card Service API, please contact us at sdk@tangocard.com.
 
-<a name="contact_us"></a>
+<a name="sdk_support_contact"></a>
 ## Contact Us ##
 To learn more about Tango Card integration solutions, call 1.877.55.TANGO.
+
+<a name="sdk_support_resolve"></a>
+## Resolving Issues using Fiddler 2 ##
+
+The best way to resolve any issues that pertain to using our Tango Card Service API is by using this freely available tool <a href="http://www.fiddler2.com/fiddler2/" target="_blank">`Fiddler 2 - Web Debugging Proxy`</a>, and provide us with the raw request and response bodies using its `Inspectors` tab feature.
+
+Using `Fiddler 2` will provide the most complete detail and the fast response from Tango Card by understanding if there is an issue on how a request was presented to our service, or if it is an issue with our service on how we replied with your request.
+
+### Fiddler 2 Example - Raw Request from Client - Get Available Balance ###
+
+```Text
+POST https://int.tangocard.com/Version2/GetAvailableBalance HTTP/1.1
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: en-us
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)
+Host: int.tangocard.com
+Content-Length: 69
+Connection: Keep-Alive
+Cache-Control: no-cache
+ 
+{"username":"third_party_int@tangocard.com","password":"integrateme"}
+```
+ 
+### Fiddler 2 Example - Raw Response from Service - Get Available Balance ###
+
+```Text
+HTTP/1.1 200 OK
+Date: Wed, 26 Sep 2012 04:30:36 GMT
+Server: Apache/2.2.22 (Ubuntu)
+X-Powered-By: PHP/5.3.10-1ubuntu3.3
+Access-Control-Allow-Origin: *
+Content-Length: 68
+Connection: close
+Content-Type: application/json
+ 
+{"responseType":"SUCCESS","response":{"availableBalance":873431432}}
+```
 
 <a name="tango_card_api_overview"></a>
 # Tango Card Service API Overview #
