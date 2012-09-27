@@ -34,7 +34,7 @@
             <li><a href="#sdk_support_resolve">Resolving Issues using Fiddler 2</a></li>
         </ul>
     </li>
-    <li><a href="#tango_card_api_overview">Tango Card API Overview</a>
+    <li><a href="#tango_card_api_overview">Tango Card Service API Overview</a>
         <ul>
             <li><a href="#tango_card_service_requests">Tango Card Service Requests</a>
                 <ul>
@@ -47,7 +47,7 @@
             <li><a href="#tango_card_service_api_security">Tango Card Service API Security</a></li>
         </ul>
     </li>
-    <li><a href="#tango_card_api_methods">Tango Card API Methods</a>
+    <li><a href="#tango_card_api_methods">Tango Card Service API Methods</a>
         <ul>
             <li><a href="#request_getavailablebalance">GetAvailableBalance</a>
                 <ul>
@@ -85,7 +85,7 @@ Tango Card Service API is flexible, secure, and straightforward. It allows any s
 
 <a name="tango_card_sdks"></a>
 ### Tango Card SDKs ###
-For those developers who do not wish to develop directly with our Tango Card API, there are several Tango Card SDKs currently available that use the Tango Card API:
+For those developers who do not wish to develop directly with our Tango Card Service API, there are several Tango Card SDKs currently available that use the Tango Card Service API:
 <ul>
     <li><a href="https://github.com/tangocarddev/TangoCard_DotNet_SDK" target="_blank">Tango Card C#/.Net 4.0 SDK</a></li>
     <li><a href="https://github.com/tangocarddev/TangoCard_PHP_SDK" target="_blank">Tango Card PHP SDK</a></li>
@@ -158,9 +158,9 @@ To learn more about Tango Card integration solutions, call 1.877.55.TANGO.
 <a name="sdk_support_resolve"></a>
 ## Resolving Issues using Fiddler 2 ##
 
-The best way to resolve any issues that pertain to using our Tango Card Service API is by using this freely available tool <a href="http://www.fiddler2.com/fiddler2/" target="_blank">`Fiddler 2 - Web Debugging Proxy`</a>, and provide us with the raw request and response bodies using its `Inspectors` tab feature.
+The best way to resolve any issues that pertain to using our Tango Card Service API is by using this freely available tool <a href="http://www.fiddler2.com/fiddler2/" target="_blank">`Fiddler 2 - Web Debugging Proxy`</a>, and providing us with the raw request and response bodies using its `Inspectors` tab feature.
 
-Using `Fiddler 2` will provide the most complete detail and the fast response from Tango Card by understanding if there is an issue on how a request was presented to our service, or if it is an issue with our service on how we replied with your request.
+Using `Fiddler 2` will provide us with the most complete detail and the fastest response from Tango Card by understanding if there is an issue on how a request was presented to our service, or if it is an issue with our service on how we replied to your request.
 
 ### Fiddler 2 Example - Raw Request from Client - Get Available Balance ###
 
@@ -168,7 +168,7 @@ Using `Fiddler 2` will provide the most complete detail and the fast response fr
 POST https://int.tangocard.com/Version2/GetAvailableBalance HTTP/1.1
 Accept: application/json, text/javascript, */*; q=0.01
 Accept-Language: en-us
-Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Content-Type: application/json; charset=UTF-8
 Accept-Encoding: gzip, deflate
 User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)
 Host: int.tangocard.com
@@ -200,7 +200,7 @@ Content-Type: application/json
 <a name="tango_card_api_requests"></a>
 ## Tango Card Service API Requests ##
 
-With the Tango Card Service API, every request has a corresponding success-case response object. There are also several failure-case response objects which are shared between calls. The specifics of the request and response objects will be described in <a href="#tango_card_api_methods">Tango Card API Methods</a>.
+With the Tango Card Service API, every request has a corresponding success-case response object. There are also several failure-case response objects which are shared between calls. The specifics of the request and response objects will be described in <a href="#tango_card_api_methods">Tango Card Service API Methods</a>.
 
 <a name="http_post_request_body"></a>
 ### HTTP POST Request Body ###
@@ -299,7 +299,7 @@ The use of SSL allows for securely transmitting data and prevents <a href="http:
 The lack of sessions and the inability to communicate with the API over HTTP prevents <a href="http://en.wikipedia.org/wiki/Session_hijacking" target="_blank">session hijacking</a> and <a href="http://en.wikipedia.org/wiki/Cross-site_request_forgery" target="_blank">cross-site request forgery</a>.
 
 <a name="tango_card_api_methods"></a>
-# Tango Card API Methods #
+# Tango Card Service API Methods #
 
 <a name="request_getavailablebalance"></a> 
 ## GetAvailableBalance ##
@@ -495,7 +495,7 @@ Content-Type: application/json
 <a name="failure_response_types" ></a>
 # Failure Response Types #
 
-Here are the following expected failure response types that can be returned from Tango Card API endpoint.
+Here are the following expected failure response types that can be returned from Tango Card Service API endpoint.
 
 <a name="failure_response_sys_error" ></a>
 ### `SYS_ERROR` ###
