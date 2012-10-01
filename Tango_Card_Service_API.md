@@ -167,8 +167,8 @@ When you are ready to purchase a card, the Tango Card Service API has several op
     <dt>
     <a name="puchasing_options_templates"></a>
     The Tango Card and custom Company Email Templates - parameter <code>companyIdentifier</code> - string - <b>optional</b></dt>
-    <dd>If you choose to have the Tango Card Service API to send digital gift cards by setting <code>tcSend</code> to <code>true</code>, then by default the gift card information within a Tango Card email template.
-    <br>If you prefer for the Tango Card Service API to send the gift card information with a custom email template with your own branding, then please do contact us at <a href="mailto:sdk@tangocard.com?Subject=Tango Card Service API Question">sdk@tangocard.com</a>.
+    <dd>If you choose to have the Tango Card Service API send digital gift cards by setting <code>tcSend</code> to <code>true</code>, then by default the gift card information within a Tango Card email template.
+    <br>If you prefer to have the Tango Card Service API send the gift card information with a custom email template (with your own branding), then please do contact us at <a href="mailto:sdk@tangocard.com?Subject=Tango Card Service API Question">sdk@tangocard.com</a>.
     </dd>
 </dl>
 
