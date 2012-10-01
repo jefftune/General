@@ -153,7 +153,7 @@ When you are ready to purchase a card, the Tango Card Service API has several op
     The Tango Card and other Retailer Brand Gift Cards SKUs - parameter <code>cardSKU</code> - string - <b>required</b></dt>
     <dd>The API is optimized for ordering the Tango Card, which is SKU <code>"tango-card"</code>.
 
-    <br>If you have questions about potentially incorporating other brands or digital goods in your program, then please do contact us at general@tangocard.com.
+    <br>If you have questions about potentially incorporating other brands or digital goods in your program, then please do contact us at <a href="mailto:sdk@tangocard.com?Subject=Tango Card Service API Question">sdk@tangocard.com</a>.
     </dd>
     
     <dt>
@@ -161,20 +161,20 @@ When you are ready to purchase a card, the Tango Card Service API has several op
     Gift Card Denominations - parameter <code>cardValue</code> - integer - <b>required</b></dt>
     <dd>Each gift card SKU has it own allowed set of denominations that can to assigned to parameter <code>cardValue</code>.
     <br/>For SKU <code>"tango-card"</code>, the available denomination in cents is between <code>1</code> ($0.01) to <code>100000</code> ($1000.00).
-    <br/>To find out about other available denominations for potentially incorporating other SKUs that can be assigned to parameter <code>cardValue</code>, then please do contact us at general@tangocard.com to get .
+    <br/>To find out about other available denominations for potentially incorporating other SKUs that can be assigned to parameter <code>cardValue</code>, then please do contact us at <a href="mailto:sdk@tangocard.com?Subject=Tango Card Service API Question">sdk@tangocard.com</a>.
     </dd>
     
     <dt>
     <a name="puchasing_options_templates"></a>
     The Tango Card and custom Company Email Templates - parameter <code>companyIdentifier</code> - string - <b>optional</b></dt>
     <dd>If you choose to have the Tango Card Service API to send digital gift cards by setting <code>tcSend</code> to <code>true</code>, then by default the gift card information within a Tango Card email template.
-    <br>If you prefer for the Tango Card Service API to send the gift card information with a custom email template with your own branding, then please do contact us at general@tangocard.com to get .
+    <br>If you prefer for the Tango Card Service API to send the gift card information with a custom email template with your own branding, then please do contact us at <a href="mailto:sdk@tangocard.com?Subject=Tango Card Service API Question">sdk@tangocard.com</a> to get .
     </dd>
 </dl>
 
 <a name="sdk_support"></a>
 # Tango Card Service API Support #
-If you have any questions with the Tango Card Service API, please contact us at sdk@tangocard.com.
+If you have any questions with the Tango Card Service API, please contact us at <a href="mailto:sdk@tangocard.com?Subject=Tango Card Service API Question">sdk@tangocard.com</a>.
 
 <a name="sdk_support_contact"></a>
 ## Contact Us ##
