@@ -20,12 +20,14 @@
                     <li><a href="#open_account_add_funds">Add Funds</a></li>
                 </ul>
             </li>
-            <li><a href="#start_using">Start Using</a>
-                <ul>
-                    <li><a href="#start_using_purchase">Purchase and Distribution of Gift Cards</a></li>
-                    <li><a href="#start_using_gift_cards">The Tango Card and other Retailer Brand Gift Cards</a></li>
-                </ul>
-            </li>
+        </ul>
+    </li>
+    <li><a href="#puchasing_options">Understanding Gift Card Purchasing Options</a>
+        <ul>
+            <li><a href="#puchasing_options_distribution">Distribution of Gift Cards</a></li>
+            <li><a href="#puchasing_options_skus">The Tango Card and other Retailer Brand Gift Cards</a></li>
+            <li><a href="#puchasing_options_denominations">Gift Card Denominations</a></li>
+            <li><a href="#puchasing_options_templates">The Tango Card and custom Company Email Templates</a></li>
         </ul>
     </li>
     <li><a href="#sdk_support">Tango Card Service API Support</a>
@@ -127,25 +129,48 @@ Third, in order to purchase the Tango Card through the Tango Card Service API, t
 
 Fund your account here either by 'wire transfer', 'check', or 'credit card': <a href="https://www.tangocard.com/user/addfunds" target="_blank">Add Funds</a>
 
-<a name="start_using"></a>
-## Start Using ##
+<a name="puchasing_options"></a>
+# Understanding Gift Card Purchasing Options #
 
-After opening and funding your Tango Card account, then you are ready to begin using the Tango Card Service API to access your account.
+After opening and funding your Tango Card account, then you are ready to begin using the Tango Card Service API to access your account for getting available balance and for purchasing gift cards.
 
-<a name="start_using_purchase"></a>
-### Purchase and Distribution of Gift Cards ###
-Through the Tango Card Service API you can purchase Tango Card gift cards with your choice of delivery:
-<ul>
-    <li>Have Tango Card service send gift cards directly to recipients via email which will include live gift card codes.</li>
-    <li>You take the returned live gift card codes for you to customize and redistribute.</li>
-</ul>
+When you are ready to purchase a card, the Tango Card Service API has several options:
 
-<a name="start_using_gift_cards"></a>
-### The Tango Card and other Retailer Brand Gift Cards ###
+<dl>
+    <dt>
+    <a name="puchasing_options_distribution"></a>
+    Distribution of Digital Gift Cards - parameter <code>tcSend</code> - boolean - <b>required</b></dt>
+    <dd>
+        Through the Tango Card Service API you can purchase Tango Card gift cards with your choice of delivery:
+        <ul>
+            <li><code>tcSend = true</code> - Have Tango Card service send gift cards directly to recipients via email which will include live gift card codes.</li>
+            <li><code>tcSend = false</code> - You take the returned live gift card codes for you to customize and redistribute.</li>
+        </ul>
+    </dd>
+    
+    <dt>
+    <a name="puchasing_options_skus"></a>
+    The Tango Card and other Retailer Brand Gift Cards SKUs - parameter <code>cardSKU</code> - string - <b>required</b></dt>
+    <dd>The API is optimized for ordering the Tango Card, which is SKU <code>"tango-card"</code>.
 
-The API is optimized for ordering the Tango Card, which has SKU of `tango-card`.
-
-If you have questions about potentially incorporating other brands or digital goods in your program please contact us at general@tangocard.com.
+    <br>If you have questions about potentially incorporating other brands or digital goods in your program, then please do contact us at general@tangocard.com.
+    </dd>
+    
+    <dt>
+    <a name="puchasing_options_denominations"></a>
+    Gift Card Denominations - parameter <code>cardValue</code> - integer - <b>required</b></dt>
+    <dd>Each gift card SKU has it own allowed set of denominations that can to assigned to parameter <code>cardValue</code>.
+    <br/>For SKU <code>"tango-card"</code>, the available denomination in cents is between <code>1</code> ($0.01) to <code>100000</code> ($1000.00).
+    <br/>To find out about other available denominations for potentially incorporating other SKUs that can be assigned to parameter <code>cardValue</code>, then please do contact us at general@tangocard.com to get .
+    </dd>
+    
+    <dt>
+    <a name="puchasing_options_templates"></a>
+    The Tango Card and custom Company Email Templates - parameter <code>companyIdentifier</code> - string - <b>optional</b></dt>
+    <dd>If you choose to have the Tango Card Service API to send digital gift cards by setting <code>tcSend</code> to <code>true</code>, then by default the gift card information within a Tango Card email template.
+    <br>If you prefer for the Tango Card Service API to send the gift card information with a custom email template with your own branding, then please do contact us at general@tangocard.com to get .
+    </dd>
+</dl>
 
 <a name="sdk_support"></a>
 # Tango Card Service API Support #
@@ -312,10 +337,10 @@ The lack of sessions and the inability to communicate with the API over HTTP pre
 <a name="getavailablebalance_request_params"></a>
 ### Request Parameters ###
 <dl>
-    <dt>username</dt>
-    <dd>https://www.tangocard.com user account's username</dd>
-    <dt>password</dt>
-    <dd>https://www.tangocard.com user account's password</dd>
+    <dt>* username</dt>
+    <dd>string - <b>required</b> - user account's username upon https://www.tangocard.com </dd>
+    <dt>* password</dt>
+    <dd>string - <b>required</b> - user account's password upon https://www.tangocard.com </dd>
 </dl>
 
 #### Example `HTTP POST` Request ####
@@ -391,24 +416,26 @@ Content-Type: application/json
 <a name="purchasecard_request_params"></a>
 ### Request Parameters ###
 <dl>
-    <dt>username</dt>
-    <dd>https://www.tangocard.com user account's username</dd>
-    <dt>password</dt>
-    <dd>https://www.tangocard.com user account's password</dd>
-    <dt>cardSku</dt>
-    <dd>string - The SKU of the card to purchase. The SKU for the Tango Card is "tango-card". For other SKUs, please refer to this section: <a href="#start_using_gift_cards">The Tango Card and other Retailer Brand Gift Cards</a></dd>
-    <dt>cardValue</dt>
-    <dd>integer - The value of the card to purchase in cents (100 = $1.00).</dd>
-    <dt>tcSend</dt>
-    <dd>boolean - Whether Tango Card will send the email to the user.</dd>
-    <dt>recipientName</dt>
-    <dd>string (length 1 - 255, required if tcSend=true) - The name of the person receiving the card.</dd>
-    <dt>recipientEmail</dt>
-    <dd>string (length 3 - 255, required if tcSend=true) - The email address of the person receiving the card.</dd>
-    <dt>giftMessage</dt>
-    <dd>string (length 1 - 255, required if tcSend=true) - A message from the sender of the card to the recipient. May be null, but must exist if tcSend = true.</dd>
+    <dt>* username</dt>
+    <dd>string - <b>required</b> - user account's username upon https://www.tangocard.com </dd>
+    <dt>* password</dt>
+    <dd>string - <b>required</b> - user account's password upon https://www.tangocard.com </dd>
+    <dt>* cardSku</dt>
+    <dd>string - <b>required</b> - The SKU of the card to purchase. The SKU for the Tango Card is "tango-card". See: <a href="#puchasing_options_skus">Purchase Option of Gift Card Brands</a></dd>
+    <dt>* cardValue</dt>
+    <dd>integer - <b>required</b> - The value of the card to purchase in cents (100 = $1.00). See: <a href="#puchasing_options_denominations">Purchase Option for Denominations</a></dd>
+    <dt>* tcSend</dt>
+    <dd>boolean - <b>required</b> - Whether Tango Card will send the email to the user. See: <a href="#puchasing_options_distribution">Purchase Option for Distribution</a>.</dd>
+    <dt>* recipientName</dt>
+    <dd>string (length 1 - 255) or null - <b>required</b> if tcSend=true else ignored - The name of the person receiving the card.</dd>
+    <dt>* recipientEmail</dt>
+    <dd>string (length 3 - 255) or null - <b>required</b> if tcSend=true else ignored - The email address of the person receiving the card.</dd>
+    <dt>* giftMessage</dt>
+    <dd>string (length 1 - 255) or null - <b>required</b> if tcSend=true else ignored - A message from the sender of the card to the recipient. May be null, but must exist if tcSend = true.</dd>
     <dt>giftFrom</dt>
-    <dd>string (length 1 - 255, required if tcSend=true) - The name of the person sending the card.</dd>
+    <dd>string (length 1 - 255) or null - <b>optional</b> if tcSend=true else ignored - The name of the person sending the card.</dd>
+    <dt>companyIdentifer</dt>
+    <dd>string (length 1 - 255) or null - <b>optional</b> if tcSend=true else ignored - The email-template identifier. Ignored or value <code>null</code> will use the Tango Card Email Template. See: <a href="#puchasing_options_templates">Purchase Option for Email Templates</a>.</dd>
 </dl>
 
 #### Example `HTTP POST` Request ####
@@ -421,15 +448,16 @@ Content-Length: 201
 Expect: 100-continue
 
 {
+    "username":"third_party_int@tangocard.com",
+    "password":"integrateme",
     "cardSku":"tango-card",
     "cardValue":100,
     "tcSend":false,
-    "recipientName":null,
-    "recipientEmail":null,
-    "giftMessage":null,
-    "giftFrom":null,
-    "username":"third_party_int@tangocard.com",
-    "password":"integrateme"
+    "recipientName":"Sally Example,
+    "recipientEmail":"sally@example.com,
+    "giftMessage":"Hello from Tango Card Service API",
+    "giftFrom":"Bill Company, Customer Support",
+    "companyIdentifier",null
 }
 ```
 
