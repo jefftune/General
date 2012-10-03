@@ -1,6 +1,6 @@
 <h1>Tango Card Service API</h1>
 <h3>Incorporate the innovative Tango Card directly into your reward, loyalty, and engagement applications.</h3>
-<h4>Update: 2012-09-24</h4>
+<h4>Update: 2012-10-03</h4>
 ===
 
 # Table of Contents #
@@ -30,7 +30,6 @@
     </li>
     <li><a href="#sdk_support">Tango Card Service API Support</a>
         <ul>
-            <li><a href="#sdk_support_contact">Contact Us</a></li>
             <li><a href="#sdk_support_resolve">Resolving Issues using Fiddler 2</a></li>
         </ul>
     </li>
@@ -73,7 +72,7 @@
         </ul>
     </li>
     <li><a href="#license">License</a></li>
-    <li><a href="#production_deployment">Production Deployment</a></li>
+    <li><a href="#contact_us">Contact Us</a></li>
 </ul>
 
 <a name="introduction"></a>
@@ -81,16 +80,17 @@
 
 <a name="tango_card_api"></a>
 ## Tango Card Service API ##
-Tango Card Service API is flexible, secure, and straightforward. It allows any server to purchase the Tango Card and is intended for users requiring high volume transactions and processes.
+The `Tango Card Service API` provides a flexible, secure, and straight forward solution for integrating into reward, loyalty, and engagement applications for purchasing the Tango Card from their funded Tango Card account on https://www.tangocard.com. 
 
 <a name="tango_card_sdks"></a>
 ### Tango Card SDKs ###
-For those developers who do not wish to develop directly with our Tango Card Service API, there are several Tango Card SDKs currently available that use the Tango Card Service API:
+For those developers who do not wish to develop directly with our Tango Card Service API, there are several `Tango Card SDKs` currently available that use the Tango Card Service API:
 <ul>
     <li><a href="https://github.com/tangocarddev/TangoCard_DotNet_SDK" target="_blank">Tango Card C#/.Net 4.0 SDK</a></li>
     <li><a href="https://github.com/tangocarddev/TangoCard_PHP_SDK" target="_blank">Tango Card PHP SDK</a></li>
     <li><a href="https://github.com/tangocarddev/TangoCard_Java_SDK" target="_blank">Tango Card Java SDK</a></li>
     <li><a href="https://github.com/tangocarddev/TangoCard_Ruby_SDK" target="_blank">Tango Card Ruby SDK</a></li>
+    <li><a href="https://github.com/tangocarddev/TangoCard_jQuery_SDK" target="_blank">Tango Card jQuery Plugin</a></li>
 </ul>
 
 <a name="incorporate_tango_card"></a>
@@ -150,10 +150,6 @@ If you have questions about potentially incorporating other brands or digital go
 <a name="sdk_support"></a>
 # Tango Card Service API Support #
 If you have any questions with the Tango Card Service API, please contact us at sdk@tangocard.com.
-
-<a name="sdk_support_contact"></a>
-## Contact Us ##
-To learn more about Tango Card integration solutions, call 1.877.55.TANGO.
 
 <a name="sdk_support_resolve"></a>
 ## Resolving Issues using Fiddler 2 ##
@@ -409,6 +405,8 @@ Content-Type: application/json
     <dd>string (length 1 - 255, required if tcSend=true) - A message from the sender of the card to the recipient. May be null, but must exist if tcSend = true.</dd>
     <dt>giftFrom</dt>
     <dd>string (length 1 - 255, required if tcSend=true) - The name of the person sending the card.</dd>
+    <dt>companyIdentifier</dt>
+    <dd>string (length 1 - 255, optional if tcSend=true) - Identifier of .</dd>
 </dl>
 
 #### Example `HTTP POST` Request ####
@@ -647,9 +645,10 @@ Content-Type: application/json
 <a name="license"></a>
 # License #
 
-The Tango Card Service API is free to use, given some restrictions. Please see the LICENSE file for details.
+The Tango Card Service API is free to use, given some restrictions. Please see the <a href="https://github.com/tangocarddev/TangoCard_Java_SDK/blob/master/LICENSE.md" target="_blank">LICENSE</a> file for details.
 
-<a name="production_deployment"></a>
-# Production Deployment #
+<a name="contact_us"></a>
+# Contact Us #
+If you have any questions about using this SDK, please do contact us at <a href="mailto:sdk@tangocard.com?Subject=Tango Card Java SDK Question">sdk@tangocard.com</a> 
 
-When you're ready to go live, email [sales@tangocard.com](mailto:sales@tangocard.com). We'll get you set up with a contract and everything else you need, including linking your account so that transactions served via your integration will draw down on your Tango Card account. 
+To learn more about Tango Card integration solutions, call 1.877.55.TANGO.
