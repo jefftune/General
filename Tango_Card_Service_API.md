@@ -1,6 +1,6 @@
 <h1>Tango Card Service API</h1>
 <h3>Incorporate the innovative Tango Card directly into your reward, loyalty, and engagement applications.</h3>
-<h4>Update: 2012-10-04</h4>
+<h4>Update: 2012-10-05</h4>
 ===
 
 # Table of Contents #
@@ -35,7 +35,7 @@
             <li><a href="#sdk_support_resolve">Resolving Issues</a>
                 <ul>
                     <li><a href="#sdk_support_resolve_fiddler_2">Fiddler 2</a></li>
-                    <li><a href="#sdk_support_resolve_jquery_diagnostic_tool">Tango Card Diagnostic Tool</a></li>
+                    <li><a href="#sdk_support_resolve_tc_diagnostic_tool">Tango Card Service API Diagnostic Tool</a></li>
                 </ul>
             </li>
         </ul>
@@ -104,9 +104,9 @@ For those developers who do not wish to develop directly with our Tango Card Ser
 ## Incorporate the Tango Card ##
 The Tango Card Service API allows you to incorporate the innovative Tango Card directly into your reward, loyalty, and engagement applications.
 
-Tango Card is the “exactly what you want” gift card and allows the recipient to use their value exactly how they want – they can select a premier gift card, they can divide their value among Brands, they can use some today and save the rest for another day. They can also donate to a non-profit organization. 
+Tango Card is the "exactly what you want" gift card and allows the recipient to use their value exactly how they want – they can select a premier gift card, they can divide their value among Brands, they can use some today and save the rest for another day. They can also donate to a non-profit organization. 
 
-Tango Card value can be used via the web or from almost any mobile device. There are no fees or expiration dates of any kind. It’s great for the recipient, and even better for you because it is an entire gift card program delivered in one card allowing you to focus on your core business. 
+Tango Card value can be used via the web or from almost any mobile device. There are no fees or expiration dates of any kind. It's great for the recipient, and even better for you because it is an entire gift card program delivered in one card allowing you to focus on your core business.
 
 Tango Card solutions are already used by Microsoft Bing, FedEx, Extole, Plink, beintoo, Lead Valu, Getty Images, and many others.
 
@@ -189,7 +189,7 @@ If you have any issues using this API, such as bugs or change requests, then ple
 To expidite any issues you might be experiencing with our `Tango Card Service API` or our `Tango Card SDKs`, gather as much information by using the following two resolution approaches, and include the results when you contact us through <a href="mailto:sdk@tangocard.com?Subject=Tango Card C#/.NET 4.0 SDK Question">sdk@tangocard.com</a>.
 
 <a name="sdk_support_resolve_fiddler_2"></a>
-### Resolving Issues using Fiddler 2 ###
+### Fiddler 2 ###
 
 The best way to resolve any issues that pertain to using our Tango Card SDKs or our Tango Card Service API is by using this freely available tool <a href="http://www.fiddler2.com/fiddler2/" target="_blank">`Fiddler 2 - Web Debugging Proxy`</a>, and providing us with the raw request and response bodies using its `Inspectors` tab feature.
 
@@ -227,10 +227,10 @@ Content-Type: application/json
 {"responseType":"SUCCESS","response":{"availableBalance":873431432}}
 ```
 
-<a name="sdk_support_resolve_jquery_diagnostic_tool"></a>
-### Resolving Issues using Tango Card Diagnostic Tool ###
+<a name="sdk_support_resolve_tc_diagnostic_tool"></a>
+### Tango Card Service API Diagnostic Tool ###
 
-Within our <a href="https://github.com/tangocarddev/TangoCard_jQuery_Plugin" target="_blank"><code>Tango Card jQuery Plugin</code></a>, there is diagnostic tool which communicates with `Tango Card Service API` through <a href="http://api.jquery.com/jQuery.ajax/" target="_blank"><code>jQuery.ajax()</code></a> calls. It is useful for making raw calls to our service.
+Within our <a href="https://github.com/tangocarddev/TangoCard_jQuery_Plugin" target="_blank"><code>Tango Card jQuery Plugin</code></a> examples, there is diagnostic tool which communicates with `Tango Card Service API` through <a href="http://api.jquery.com/jQuery.ajax/" target="_blank"><code>jQuery.ajax()</code></a> calls. It is useful for making raw calls to our service: <a href="https://github.com/tangocarddev/TangoCard_jQuery_Plugin#tango_card_service_api_diagnostic_tool" target="_blank">Tango Card Service API Diagnostic Tool</a>.
 
 <a name="tango_card_api_overview"></a>
 # Tango Card Service API Overview #
