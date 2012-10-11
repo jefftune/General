@@ -381,7 +381,7 @@ Connection: Keep-Alive
             <dt>SUCCESS</dt>
             <dd>JSON Object:
                 <dl>
-                    <dt>availableBalance</dt>
+                    <dt><code>availableBalance</code></dt>
                     <dd>integer - The balance available to the user in cents (100 = $1.00).
                     </dd>
                 </dl>
@@ -483,14 +483,18 @@ Expect: 100-continue
             <dt>SUCCESS</dt>
             <dd>JSON Object:
                 <dl>
-                    <dt>referenceOrderId</dt>
-                    <dd>string - A unique token that we can use to look up the order.</dd>
-                    <dt>cardToken</dt>
-                    <dd>string - A unique token that we can use to look up the card.</dd>
-                    <dt>cardNumber</dt>
-                    <dd>string - The card’s "number".</dd>
-                    <dt>cardPin</dt>
-                    <dd>string - The card’s "pin", may be null.</dd>
+                    <dt><code>referenceOrderId</code></dt>
+                    <dd>string - Confirmation number of purchase.</dd>
+                    <dt><code>cardToken</code></dt>
+                    <dd>string - Card reference to the aforementioned purchase..</dd>
+                    <dt><code>cardNumber</code></dt>
+                    <dd>string|null - If available, the card number provided to the recipient to be used at redemption of eGift Card upon the www.tangocard.com site.</dd>
+                    <dt><code>cardPin</code></dt>
+                    <dd>string|null - If available, the card pin provided to the recipient used to validate provided eGift Card number a redemption upon the www.tangocard.com site.</dd>
+                    <dt><code>claimUrl</code></dt>
+                    <dd>string|null - If available, the claim URL is an address to a web page on the World Wide Web. This URL can only be accessed through the email you received. It is a unique URL, meaning that it cannot be duplicated or altered.</dd>
+                    <dt><code>challengeKey</code></dt>
+                    <dd>string|null - If available, the challenge key provides access, which can be found next to the aforementioned claim URL. You will be prompted to input your Challenge Key when you try to open your eGift Card.</dd>
                 </dl>
             </dd>
         </dl>
