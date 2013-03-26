@@ -1,6 +1,6 @@
 <h1>Tango Card Service API</h1>
 <h3>Incorporate the innovative Tango Card directly into your reward, loyalty, and engagement applications.</h3>
-<h4>Update: 2012-12-01</h4>
+<h4>Update: 2013-03-25</h4>
 ===
 
 # Table of Contents #
@@ -469,15 +469,16 @@ Content-Length: 201
 Expect: 100-continue
 
 {
-    "cardSku":"tango-card",
-    "cardValue":100,
-    "tcSend":false,
-    "recipientName":null,
-    "recipientEmail":null,
-    "giftMessage":null,
-    "giftFrom":null,
-    "username":"third_party_int@tangocard.com",
-    "password":"integrateme"
+  "username": "third_party_int@tangocard.com",
+  "password": "integrateme",
+  "cardSku": "tango-card",
+  "cardValue": 500,
+  "tcSend": true,
+  "recipientName": "Jeff Tanner",
+  "recipientEmail": "jeff@tangocard.com",
+  "giftMessage": "Sorry for the trouble. Here is a Tango Card.",
+  "giftFrom": "Jeff Tango Card Dev",
+  "companyIdentifier": "Tango Card"
 }
 ```
 
@@ -503,6 +504,8 @@ Expect: 100-continue
                     <dd>string|null - If available, the claim URL is an address to a web page on the World Wide Web. This URL can only be accessed through the email you received. It is a unique URL, meaning that it cannot be duplicated or altered.</dd>
                     <dt><code>challengeKey</code></dt>
                     <dd>string|null - If available, the challenge key provides access, which can be found next to the aforementioned claim URL. You will be prompted to input your Challenge Key when you try to open your eGift Card.</dd>
+                    <dt><code>eventNumber</code></dt>
+                    <dd>string|null - If available depending upon provided card SKU, then the event number is used when replacing lost card.</dd>
                 </dl>
             </dd>
         </dl>
@@ -533,14 +536,16 @@ Connection: close
 Content-Type: application/json
 
 {
-    "responseType":"SUCCESS",
-    "response":
-        {
-            "referenceOrderId":"112-09213864-21",
-            "cardToken":"505bf051296370.96220841",
-            "cardNumber":"7001-7040-0119-6557-815",
-            "cardPin":"157228"
-        }
+    "responseType": "SUCCESS",
+    "response": {
+        "referenceOrderId": "113-03237814-26",
+        "cardToken": "51513caf481aa9.81359796",
+        "cardNumber": "7001-3040-0191-1147-118",
+        "cardPin": "536454",
+        "claimUrl": null,
+        "challengeKey": "7001304001911147118",
+        "eventNumber": null
+    }
 }
 ```
 
