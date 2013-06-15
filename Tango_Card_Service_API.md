@@ -1,8 +1,13 @@
 <h1>Tango Card Service API</h1>
 <h3>Incorporate the innovative Tango Card directly into your reward, loyalty, and engagement applications.</h3>
-<h4>Update: 2013-03-25</h4>
+<h4>Update: Updated: 2013-June-15</h4>
 ===
 
+Tango Card Service API is depracating in favor of the Tango Card Rewards-as-a-Service (RaaSâ„¢) API. More information about the RaaS&trade; API can be found at https://github.com/tangocarddev/RaaS/blob/master/README.md
+
+Please contact sdk@tangocard.com for access to Sandbox and Production environment, as well as general help regarding the RaaS&trade; API.
+
+<!--
 # Table of Contents #
 <ul>
     <li><a href="#introduction">Introduction</a>
@@ -104,7 +109,7 @@ For those developers who do not wish to develop directly with our Tango Card Ser
 ## Incorporate the Tango Card ##
 The Tango Card Service API allows you to incorporate the innovative Tango Card directly into your reward, loyalty, and engagement applications.
 
-Tango Card is the "exactly what you want" gift card and allows the recipient to use their value exactly how they want – they can select a premier gift card, they can divide their value among Brands, they can use some today and save the rest for another day. They can also donate to a non-profit organization. 
+Tango Card is the "exactly what you want" gift card and allows the recipient to use their value exactly how they want ï¿½ they can select a premier gift card, they can divide their value among Brands, they can use some today and save the rest for another day. They can also donate to a non-profit organization. 
 
 Tango Card value can be used via the web or from almost any mobile device. There are no fees or expiration dates of any kind. It's great for the recipient, and even better for you because it is an entire gift card program delivered in one card allowing you to focus on your core business.
 
@@ -588,11 +593,11 @@ Content-Type: application/json
 <a name="failure_response_inv_input" ></a>
 ### `INV_INPUT` ###
 
-One (or more) of the supplied inputs didn’t meet the requirements. The request should be altered before resubmitting.
+One (or more) of the supplied inputs didnï¿½t meet the requirements. The request should be altered before resubmitting.
 
 <dl>
     <dt>invalid<dt>
-    <dd>JSON object - The object’s properties are the name of the invalid field, the value of the property is description of the associated problem.</dd>
+    <dd>JSON object - The objectï¿½s properties are the name of the invalid field, the value of the property is description of the associated problem.</dd>
 </dl>
 
 #### Example `INV_INPUT` Response Type ####
@@ -658,19 +663,19 @@ Content-Type: application/json
 <a name="failure_response_ins_inv" ></a>
 ### `INS_INV` ###
 
-We don’t have enough available inventory to fulfill the request. The request should be altered before resubmitting.
+We donï¿½t have enough available inventory to fulfill the request. The request should be altered before resubmitting.
 
 <dl>
     <dt>sku<dt>
-    <dd>string - The SKU that we couldn’t fulfill.</dd>
+    <dd>string - The SKU that we couldnï¿½t fulfill.</dd>
     <dt>value<dt>
-    <dd>integer - The value that we couldn’t fulfill.</dd>
+    <dd>integer - The value that we couldnï¿½t fulfill.</dd>
 </dl>
     
 <a name="failure_response_ins_funds" ></a>
 ### `INS_FUNDS` ###
 
-The account associated with the authenticated user doesn’t have enough available balance to cover the cost of the purchase.
+The account associated with the authenticated user doesnï¿½t have enough available balance to cover the cost of the purchase.
 
 <dl>
     <dt>availableBalance<dt>
@@ -712,3 +717,4 @@ The Tango Card Service API is free to use, given some restrictions. Please see t
 If you have any questions about using this SDK, please do contact us at <a href="mailto:sdk@tangocard.com?Subject=Tango Card Service API Question">sdk@tangocard.com</a>. We will respond to inquiries within one business day.
 
 To learn more about Tango Card integration solutions, call 1.877.55.TANGO (1.877.558.2646).
+-->
