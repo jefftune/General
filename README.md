@@ -15,3 +15,4 @@ This is a public repository for general documents and code available to third pa
 </dl>
 
 -->
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/0d99126c1cf8686391099d328e3c2363 "githalytics.com")](http://githalytics.com/github.com/tangocarddev)
